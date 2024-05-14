@@ -1,0 +1,15 @@
+<p>liste-conducteurs works!</p>
+<img class="conduc-image" src="../assets/Img/conduc.jpeg" alt="">
+<ul>
+    <li *ngFor="let item of conducteur">
+      <div>
+        <strong>Nom: </strong>{{ item.ConducName }}
+      </div>
+      <div>
+        <strong>Âge: </strong>{{ item.age }}
+      </div>
+      <div>
+        <strong>Années de permis de conduire : </strong>{{ item.annee_service }} 
+      </div>
+    </li>
+  </ul>

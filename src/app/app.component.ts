@@ -1,22 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit} from '@angular/core';
+import { RouterOutlet, RouterLink } from '@angular/router';
 import { CONDUCTEURS } from './mock-conducteurs';
 import { Conduc } from './conduc';
+import { CommonModule } from '@angular/common';
+import { BarnavComponent } from './barnav/barnav.component';
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  template: `
-    <h1>liste des conducteurs</h1>
-    <p>Voici les conducteurs de navette</p>
-
-    <router-outlet />
-  `,
-  styles: [],
+  imports: [RouterOutlet, CommonModule, RouterLink, BarnavComponent],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent  implements OnInit {
   liste: Conduc[] = CONDUCTEURS;
-
   ngOnInit() {
     console.table(this.liste);
     this.selectliste(this.liste[0]);
