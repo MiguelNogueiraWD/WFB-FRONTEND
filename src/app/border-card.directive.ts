@@ -1,6 +1,7 @@
 import { Directive,ElementRef, HostListener } from '@angular/core';
-
+/*
 @Directive({
+  standalone: true,
   selector: '[appBorderCard]',
 })
 export class BorderCardDirective {
@@ -26,3 +27,4 @@ export class BorderCardDirective {
     this.el.nativeElement.style.border = `solid 4px ${color}`;
   }
 }
+*/

@@ -1,0 +1,29 @@
+<p>
+    Veuillez vous inscrire ou vous connecter pour accéder à cette page.
+</p>
+<form (ngSubmit)="onSubmit()">
+    <label for="utilisateur_nom">Nom:</label>
+    <input id="utilisateur_nom" [(ngModel)]="utilisateur_nom" name="utilisateur_nom" required>
+  
+    <label for="utilisateur_prenom">Prénom:</label>
+    <input id="utilisateur_prenom" [(ngModel)]="utilisateur_prenom" name="utilisateur_prenom" required>
+  
+    <label for="email">Email:</label>
+    <input id="email" [(ngModel)]="email" name="email" type="email" required>
+  
+    <label for="utilisateur_adresse">Adresse:</label>
+    <input id="utilisateur_adresse" [(ngModel)]="utilisateur_adresse" name="utilisateur_adresse" required>
+  
+    <label for="utilisateur_tel">Téléphone:</label>
+    <input id="utilisateur_tel" [(ngModel)]="utilisateur_tel" name="utilisateur_tel" required>
+  
+    <label for="password">Mot de passe:</label>
+    <input id="password" [(ngModel)]="password" name="password" type="password" required>
+  
+    <label for="password_confirmation">Confirmer Mot de passe:</label>
+    <input id="password_confirmation" [(ngModel)]="password_confirmation" name="password_confirmation" type="password" required>
+  
+    <button type="submit">S'inscrire</button>
+  </form>
+  <button (click)="goToAdminLogin()">Connexion Admin</button>
+<router-outlet> </router-outlet>

@@ -1,10 +1,17 @@
+
 import { Routes } from '@angular/router';
-import { DetailsConducteursComponent } from './details-conducteurs/details-conducteurs.component';
-import { ListeConducteursComponent } from './liste-conducteurs/liste-conducteurs.component';
-import { ConnexionComponent } from './connexion/connexion.component';
-import { HorairesComponent } from './horaires/horaires.component';
+import { DetailsConducteursComponent } from './composants/details-conducteurs/details-conducteurs.component';
+import { ListeConducteursComponent } from './composants/liste-conducteurs/liste-conducteurs.component';
+import { ConnexionComponent } from './composants/connexion/connexion.component';
+import { HorairesComponent } from './composants/horaires/horaires.component';
+import { AppComponent } from './app.component';
+import { ModerationComponent } from './composants/moderation/moderation.component';
 
 export const routes: Routes = [
+    { 
+        path: 'Accueil', 
+        component: AppComponent,
+    },
     {
         path: 'details-conducteurs',
         component: DetailsConducteursComponent,
@@ -14,12 +21,17 @@ export const routes: Routes = [
         component: ListeConducteursComponent,
     },
     {
-        path: 'connexion',
+        path: 'connexion' ,
         component: ConnexionComponent,
     },
     {
         path: 'horaires',
         component: HorairesComponent,
     },
-    { path: 'details-conducteurs/:id', component: DetailsConducteursComponent },
+    { path: 'details-conducteurs/:id',
+     component: DetailsConducteursComponent },
+     
+    { path: 'moderation',
+     component: ModerationComponent },
+    
 ];

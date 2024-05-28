@@ -1,0 +1,22 @@
+<form (ngSubmit)="onSubmit()">
+    <label for="chauffeur_nom">Nom:</label>
+    <input id="chauffeur_nom" [(ngModel)]="chauffeur_nom" name="chauffeur_nom" required>
+  
+    <label for="chauffeur_prenom">Prénom:</label>
+    <input id="chauffeur_prenom" [(ngModel)]="chauffeur_prenom" name="chauffeur_prenom" required>
+  
+    <label for="chauffeur_email">Email:</label>
+    <input id="chauffeur_email" [(ngModel)]="chauffeur_email" name="chauffeur_email" type="email" required>
+  
+    <label for="chauffeur_adresse">Adresse:</label>
+    <input id="chauffeur_adresse" [(ngModel)]="chauffeur_adresse" name="chauffeur_adresse" required>
+  
+    <label for="chauffeur_tel">Téléphone:</label>
+    <input id="chauffeur_tel" [(ngModel)]="chauffeur_tel" name="chauffeur_tel" required>
+  
+    <label for="chauffeur_statut">Statut:</label>
+    <input id="chauffeur_statut" [(ngModel)]="chauffeur_statut" name="chauffeur_statut" required>
+  
+    <button type="submit">S'inscrire</button>
+</form>
+<router-outlet> </router-outlet>

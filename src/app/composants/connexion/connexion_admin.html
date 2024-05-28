@@ -1,0 +1,9 @@
+<form (ngSubmit)="onSubmit()">
+    <label for="admin_tel">Téléphone Admin:</label>
+    <input id="admin_tel" [(ngModel)]="admin_tel" name="admin_tel" required>
+  
+    <label for="admin_password">Mot de passe Admin:</label>
+    <input id="admin_password" [(ngModel)]="admin_password" name="admin_password" type="password" required>
+  
+    <button type="submit">Se connecter</button>
+</form>

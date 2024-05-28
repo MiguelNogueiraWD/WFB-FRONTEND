@@ -25,6 +25,8 @@
 
   .agauche {
     display: flex;
+    color: black;
+    border-radius: 5px;
     gap: 20px; /* Adjust this to change the space between the links */
   }
   
