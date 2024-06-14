@@ -27,6 +27,11 @@
     display: flex;
     color: black;
     border-radius: 5px;
-    gap: 20px; /* Adjust this to change the space between the links */
+    gap: 20px; 
   }
   
+  .image-class {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+  }

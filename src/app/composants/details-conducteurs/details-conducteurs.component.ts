@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterOutlet, ActivatedRoute, RouterLinkActive} from '@angular/router';
 import { ConducteurService } from '../../services/conducteur_service';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-details-conducteurs',
   standalone: true,
-  imports: [RouterLink, RouterOutlet, RouterLinkActive, CommonModule],
+  imports: [RouterLink, RouterOutlet, RouterLinkActive, CommonModule, HttpClientModule],
+  providers: [ConducteurService,HttpClientModule],
   templateUrl: './details-conducteurs.component.html',
   styles: ``
 })

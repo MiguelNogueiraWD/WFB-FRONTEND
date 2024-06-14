@@ -1,0 +1,13 @@
+<div *ngIf="mission">
+    <h2>Détails de la Mission</h2>
+    <p><strong>Détails de la mission:</strong> {{ mission.details_mission }}</p>
+    <p><strong>Date:</strong> {{ mission.date }}</p>
+    <p><strong>Heure de début:</strong> {{ mission.heure_debut }}</p>
+    <p><strong>Heure de fin:</strong> {{ mission.heure_fin }}</p>
+    <p><strong>Chauffeur:</strong> {{ mission.chauffeur.chauffeur_nom }} {{ mission.chauffeur.chauffeur_prenom }}</p>
+    <p><strong>Bus:</strong> {{ mission.bus.marque }} {{ mission.bus.modele }} ({{ mission.bus.immatriculation }})</p>
+    <p><strong>Vol:</strong> De {{ mission.vol.provenance }} à {{ mission.vol.destination }}</p>
+    <p><strong>Heure Commencée:</strong> {{ mission.heure_commencee }}</p>
+    <p><strong>Heure Terminée:</strong> {{ mission.heure_terminee }}</p>
+  </div>
+  

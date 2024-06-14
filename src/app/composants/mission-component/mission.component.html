@@ -1,0 +1,15 @@
+<div>
+    <h1>Missions</h1>
+    <div>
+      <label for="filter">Filter:</label>
+      <select id="filter"  (change)="getMissions(filter)">
+        <option value="today">Today</option>
+        <option value="this_week">This Week</option>
+        <option value="this_month">This Month</option>
+      </select>
+    </div>
+    <div *ngFor="let mission of missions">
+      <h2>{{ mission.id }}</h2>
+      <p>{{ mission.statut_mission }}</p>
+    </div>
+  </div>

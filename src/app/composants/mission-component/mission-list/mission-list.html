@@ -1,0 +1,41 @@
+<div>
+    <h2>Liste des Missions</h2>
+    <select [(ngModel)]="filter" (change)="onFilterChange(filter)">
+      <option value="today">Aujourd'hui</option>
+      <option value="past">Passées</option>
+      <option value="future">Futures</option>
+    </select>
+  
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Heure de Début</th>
+          <th>Heure de Fin</th>
+          <th>Statut</th>
+          <th>Chauffeur</th>
+          <th>Bus</th>
+          <th>Vol</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let mission of missions">
+          <td>{{ mission.date }}</td>
+          <td>{{ mission.heure_debut }}</td>
+          <td>{{ mission.heure_fin }}</td>
+          <td>{{ mission.statut_mission }}</td>
+          <td>{{ mission.chauffeur.chauffeur_nom }} {{ mission.chauffeur.chauffeur_prenom }}</td>
+          <td>
+            <a (click)="navigateToBusDetails(mission.bus.id)">{{ mission.bus.marque }} {{ mission.bus.modele }} ({{ mission.bus.immatriculation }})</a>
+          </td>
+          <td>De {{ mission.vol.provenance }} à {{ mission.vol.destination }}</td>
+          <td>
+            <button (click)="navigateToMissionDetails(mission.id)">Détails</button>
+            <button *ngIf="isAdmin" (click)="navigateToEditMission(mission.id)">Modifier</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

@@ -1,0 +1,40 @@
+<div>
+    <h2>Créer une Mission</h2>
+    <form (ngSubmit)="createMission()">
+      <label for="date">Date:</label>
+      <input type="date" id="date" [(ngModel)]="missionData.date" name="date" required>
+  
+      <label for="heure_debut">Heure de début:</label>
+      <input type="time" id="heure_debut" [(ngModel)]="missionData.heure_debut" name="heure_debut" required>
+  
+      <label for="heure_fin">Heure de fin:</label>
+      <input type="time" id="heure_fin" [(ngModel)]="missionData.heure_fin" name="heure_fin" required>
+  
+      <label for="details_mission">Détails de la mission:</label>
+      <input type="text" id="details_mission" [(ngModel)]="missionData.details_mission" name="details_mission" required>
+  
+      <label for="chauffeur_id">Chauffeur:</label>
+      <select id="chauffeur_id" [(ngModel)]="missionData.chauffeur_id" name="chauffeur_id" required>
+        <option *ngFor="let chauffeur of chauffeurs" [value]="chauffeur.id">
+          {{ chauffeur.chauffeur_nom }} {{ chauffeur.chauffeur_prenom }}
+        </option>
+      </select>
+  
+      <label for="bus_id">Bus:</label>
+      <select id="bus_id" [(ngModel)]="missionData.bus_id" name="bus_id" required>
+        <option *ngFor="let bus of buses" [value]="bus.id">
+          {{ bus.marque }} {{ bus.modele }} ({{ bus.immatriculation }})
+        </option>
+      </select>
+  
+      <label for="vol_id">Vol:</label>
+      <select id="vol_id" [(ngModel)]="missionData.vol_id" name="vol_id" required>
+        <option *ngFor="let vol of vols" [value]="vol.id">
+          De {{ vol.provenance }} à {{ vol.destination }}
+        </option>
+      </select>
+  
+      <button type="submit">Créer la mission</button>
+    </form>
+  </div>
+  

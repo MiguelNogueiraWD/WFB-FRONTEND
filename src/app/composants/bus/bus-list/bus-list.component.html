@@ -1,0 +1,29 @@
+<div>
+    <h2>Liste des Bus</h2>
+    <div class="">
+      <button (click)="navigateToCreateBus()" class="btn btn-primary">Nouveau bus</button>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Marque</th>
+          <th>Modèle</th>
+          <th>Immatriculation</th>
+          <th>Capacité</th>
+          <th>Statut</th>
+          <th>Détails</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let bus of buses">
+          <td>{{ bus.marque }}</td>
+          <td>{{ bus.modele }}</td>
+          <td>{{ bus.immatriculation }}</td>
+          <td>{{ bus.capacite }}</td>
+          <td>{{ bus.statut }}</td>
+          <td><button (click)="navigateToBusDetails(bus.id)">Détails</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

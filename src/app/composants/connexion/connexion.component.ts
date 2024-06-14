@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 import { BarnavComponent } from '../barnav/barnav.component';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-connexion',
   standalone: true,
-  imports: [CommonModule, BarnavComponent, RouterOutlet, RouterLink, RouterLinkActive, FormsModule],
+  imports: [CommonModule, BarnavComponent, RouterOutlet, RouterLink, RouterLinkActive, FormsModule, HttpClientModule],
   templateUrl: './connexion.component.html',
   styleUrls: ['./connexion.component.css']
 })
@@ -23,16 +24,12 @@ export class ConnexionComponent {
 
     // ...
 
-    constructor(private apiService: ApiService, private router: Router) {}
+    constructor(private http:HttpClient) {}
 
     // ...
 
 
-    goToAdminLogin() {
-      this.router.navigate(['/connexion_admin']);
-    }
-
-    onSubmit() {
+   /* onSubmit() {
       const userData = {
         utilisateur_nom: this.utilisateur_nom,
         utilisateur_prenom: this.utilisateur_prenom,
@@ -45,17 +42,24 @@ export class ConnexionComponent {
       
       console.log(userData);
 
-      this.apiService.register(userData).subscribe({
-        next: (response) => {
-          console.log('Success', response);
-        },
-        error: (error) => {
-          console.error('Error', error);
-        },
-        complete: () => {
-          console.log('Request complete');
-        }
+      this.http.post('http://127.0.0.1:8000/api/register', userData).subscribe(response => {
+      console.log('User registered', response);
+    });
+      
+    }*/
+    registerUser() {
+      const user = {
+        utilisateur_nom: this.utilisateur_nom,
+        utilisateur_prenom: this.utilisateur_prenom,
+        email: this.email,
+        utilisateur_adresse: this.utilisateur_adresse,
+        utilisateur_tel: this.utilisateur_tel,
+        password: this.password,
+        password_confirmation: this.password_confirmation
+      };
+      this.http.post('http://127.0.0.1:8000/api/register', user).subscribe(response => {
+        console.log('User registered', response);
       });
-  
     }
+
 }

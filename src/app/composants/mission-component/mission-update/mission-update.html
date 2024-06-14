@@ -1,0 +1,28 @@
+<div *ngIf="mission">
+    <h2>Modifier la Mission</h2>
+    <form (ngSubmit)="updateMission()">
+      <label for="date">Date:</label>
+      <input type="date" id="date" [(ngModel)]="mission.date" name="date" required>
+  
+      <label for="heure_debut">Heure de début:</label>
+      <input type="time" id="heure_debut" [(ngModel)]="mission.heure_debut" name="heure_debut" required>
+  
+      <label for="heure_fin">Heure de fin:</label>
+      <input type="time" id="heure_fin" [(ngModel)]="mission.heure_fin" name="heure_fin" required>
+  
+      <label for="details_mission">Détails de la mission:</label>
+      <input type="text" id="details_mission" [(ngModel)]="mission.details_mission" name="details_mission" required>
+  
+      <label for="chauffeur_id">Chauffeur:</label>
+      <input type="number" id="chauffeur_id" [(ngModel)]="mission.chauffeur_id" name="chauffeur_id" required>
+  
+      <label for="bus_id">Bus:</label>
+      <input type="number" id="bus_id" [(ngModel)]="mission.bus_id" name="bus_id" required>
+  
+      <label for="vol_id">Vol:</label>
+      <input type="number" id="vol_id" [(ngModel)]="mission.vol_id" name="vol_id" required>
+  
+      <button type="submit">Enregistrer</button>
+    </form>
+  </div>
+  

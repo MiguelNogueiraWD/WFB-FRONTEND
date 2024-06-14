@@ -1,4 +1,4 @@
-<form (ngSubmit)="onSubmit()">
+<form (ngSubmit)="registerDriver()">
     <label for="chauffeur_nom">Nom:</label>
     <input id="chauffeur_nom" [(ngModel)]="chauffeur_nom" name="chauffeur_nom" required>
   
@@ -14,9 +14,12 @@
     <label for="chauffeur_tel">Téléphone:</label>
     <input id="chauffeur_tel" [(ngModel)]="chauffeur_tel" name="chauffeur_tel" required>
   
-    <label for="chauffeur_statut">Statut:</label>
-    <input id="chauffeur_statut" [(ngModel)]="chauffeur_statut" name="chauffeur_statut" required>
+    <label for="password">Mot de passe:</label>
+    <input id="password" [(ngModel)]="password" name="password" type="password" required>
   
+    <label for="password_confirmation">Confirmer Mot de passe:</label>
+    <input id="password_confirmation" [(ngModel)]="password_confirmation" name="password_confirmation" type="password" required>
+  
+
     <button type="submit">S'inscrire</button>
 </form>
-<router-outlet> </router-outlet>

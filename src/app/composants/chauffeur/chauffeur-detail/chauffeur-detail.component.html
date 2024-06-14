@@ -1,0 +1,49 @@
+<div *ngIf="chauffeur">
+    <h2>Détails du Chauffeur</h2>
+    <p><strong>Nom:</strong> {{ chauffeur.chauffeur_nom }}</p>
+    <p><strong>Prénom:</strong> {{ chauffeur.chauffeur_prenom }}</p>
+    <p><strong>Email:</strong> {{ chauffeur.chauffeur_email }}</p>
+    <p><strong>Téléphone:</strong> {{ chauffeur.chauffeur_tel }}</p>
+    <p><strong>Adresse:</strong> {{ chauffeur.chauffeur_adresse }}</p>
+    <p><strong>Statut:</strong> {{ chauffeur.chauffeur_statut }}</p>
+    
+    <h3>Missions du Chauffeur</h3>
+    <select [(ngModel)]="filter" (change)="onFilterChange(filter)">
+      <option value="today">Aujourd'hui</option>
+      <option value="past">Passées</option>
+      <option value="future">Futures</option>
+    </select>
+  
+    <table class="table table-striped" *ngIf="filteredMissions.length > 0">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Heure de Début</th>
+          <th>Heure de Fin</th>
+          <th>Détails</th>
+          <th>Bus</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let mission of filteredMissions">
+          <td>{{ mission.date }}</td>
+          <td>{{ mission.heure_debut }}</td>
+          <td>{{ mission.heure_fin }}</td>
+          <td>{{ mission.details_mission }}</td>
+          <td>{{ mission.bus.marque }} {{ mission.bus.modele }} ({{ mission.bus.immatriculation }})</td>
+          <td>
+            <button (click)="navigateToMissionDetails(mission.id)">Détails</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <div *ngIf="isAdmin">
+      <h3>Ajouter une Mission</h3>
+      <button (click)="navigateToCreateMissionForChauffeur()" class="btn btn-primary">Nouvelle mission pour ce chauffeur</button>
+      <h3>Actions</h3>
+      <button (click)="confirmDelete()" class="btn btn-danger">Supprimer</button>
+    </div>
+  </div>
+  

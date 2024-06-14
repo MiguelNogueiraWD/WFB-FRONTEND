@@ -4,13 +4,14 @@ import { CONDUCTEURS } from './mock-conducteurs';
 import { Conduc } from './conduc';
 import { CommonModule } from '@angular/common';
 import { BarnavComponent } from './composants/barnav/barnav.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, withFetch } from '@angular/common/http';
+import { SliderComponent } from './Accueil/Slider_Images/slider.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, RouterLink, BarnavComponent,RouterLinkActive],
+  imports: [RouterOutlet, CommonModule, RouterLink, BarnavComponent,RouterLinkActive,HttpClientModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })

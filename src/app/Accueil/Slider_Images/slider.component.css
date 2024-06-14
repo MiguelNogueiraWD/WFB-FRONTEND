@@ -1,0 +1,19 @@
+.slider {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .carousel {
+    width: 100%;
+    position: relative;
+  }
+  
+  .slide {
+    text-align: center;
+  }
+  
+  .slide img {
+    width: auto;
+    height: auto;
+    max-height: 300px;
+  }

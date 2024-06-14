@@ -14,7 +14,14 @@ export class ApiService {
   register(userData: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/register`, userData);
   }
+  /*moderation(chauffeurData: any): Observable<any> {
+    chauffeurData.chauffeur_statut = "";
+    return this.http.post(`${this.apiUrl}/chauffeur/register`, chauffeurData);
+  }
+  */
   admin_Login(admin_tel: string, admin_password: string): Observable<any> {
     return this.http.post<any>(this.apiUrl +'/admin', { admin_tel, admin_password });
   }
+
+
 }

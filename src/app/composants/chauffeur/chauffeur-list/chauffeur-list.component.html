@@ -1,0 +1,31 @@
+<div>
+    <h2>Liste des Chauffeurs</h2>
+    <div class="">
+      <button (click)="navigateToCreateChauffeur()" class="btn btn-primary">Nouveau chauffeur</button>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Email</th>
+          <th>Téléphone</th>
+          <th>Adresse</th>
+          <th>Statut</th>
+          <th>Détails</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let chauffeur of chauffeurs">
+          <td>{{ chauffeur.chauffeur_nom }}</td>
+          <td>{{ chauffeur.chauffeur_prenom }}</td>
+          <td>{{ chauffeur.chauffeur_email }}</td>
+          <td>{{ chauffeur.chauffeur_tel }}</td>
+          <td>{{ chauffeur.chauffeur_adresse }}</td>
+          <td>{{ chauffeur.chauffeur_statut }}</td>
+          <td><button (click)="navigateToChauffeurDetails(chauffeur.id)">Détails</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

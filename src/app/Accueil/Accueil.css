@@ -1,16 +1,14 @@
 /* Style du neuromorphisme */
 .container {
-    background-color: #f0f0f0;
+    background-color: #0043a2;
     border-radius: 10px;
-    box-shadow: 5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff;
     padding: 20px;
 }
 
 .button {
-    background-color: #f0f0f0;
+    background-color: #0043a2;
     border: none;
     border-radius: 5px;
-    box-shadow: 3px 3px 5px #d9d9d9, -3px -3px 5px #ffffff;
     color: #333333;
     cursor: pointer;
     padding: 10px 20px;

@@ -1,0 +1,35 @@
+<div>
+    <h2>Créer un Chauffeur</h2>
+    <form (ngSubmit)="registerChauffeur()">
+      <label for="chauffeur_nom">Nom:</label>
+      <input type="text" id="chauffeur_nom" [(ngModel)]="chauffeur_nom" name="chauffeur_nom" required>
+  
+      <label for="chauffeur_prenom">Prénom:</label>
+      <input type="text" id="chauffeur_prenom" [(ngModel)]="chauffeur_prenom" name="chauffeur_prenom" required>
+  
+      <label for="chauffeur_email">Email:</label>
+      <input type="email" id="chauffeur_email" [(ngModel)]="chauffeur_email" name="chauffeur_email" required>
+  
+      <label for="chauffeur_tel">Téléphone:</label>
+      <input type="text" id="chauffeur_tel" [(ngModel)]="chauffeur_tel" name="chauffeur_tel" required>
+  
+      <label for="chauffeur_adresse">Adresse:</label>
+      <input type="text" id="chauffeur_adresse" [(ngModel)]="chauffeur_adresse" name="chauffeur_adresse" required>
+  
+      <label for="chauffeur_statut">Statut:</label>
+      <input type="text" id="chauffeur_statut" [(ngModel)]="chauffeur_statut" name="chauffeur_statut" required>
+  
+      <label for="password">Mot de passe:</label>
+      <input type="password" id="password" [(ngModel)]="password" name="password" required>
+  
+      <label for="password_confirmation">Confirmer le mot de passe:</label>
+      <input type="password" id="password_confirmation" [(ngModel)]="password_confirmation" name="password_confirmation" required>
+  
+      <button type="submit" [disabled]="isLoading">Créer</button>
+    </form>
+  
+    <div *ngIf="isLoading">Envoi en cours...</div>
+    <div *ngIf="successMessage">{{ successMessage }}</div>
+    <div *ngIf="errorMessage">{{ errorMessage }}</div>
+  </div>
+  
